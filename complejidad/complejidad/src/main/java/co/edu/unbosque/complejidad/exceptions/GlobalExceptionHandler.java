@@ -20,4 +20,10 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR.value())
                 .body(new BaseResponse(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR.value()));
     }
+
+    @ExceptionHandler(ArchivoVacioException.class)
+    public ResponseEntity<BaseResponse> handleArchivoVacioException(ArchivoVacioException ex) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR.value())
+                .body(new BaseResponse(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR.value()));
+    }
 }

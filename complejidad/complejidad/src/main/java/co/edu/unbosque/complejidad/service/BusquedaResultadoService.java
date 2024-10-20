@@ -1,5 +1,6 @@
 package co.edu.unbosque.complejidad.service;
 
+import co.edu.unbosque.complejidad.exceptions.ArchivoVacioException;
 import co.edu.unbosque.complejidad.exceptions.BusquedaException;
 import co.edu.unbosque.complejidad.exceptions.ProcesarArchivoException;
 import co.edu.unbosque.complejidad.model.dto.BusquedaDTO;
@@ -52,9 +53,9 @@ public class BusquedaResultadoService {
             return resultadoDTO;
 
         } catch (IOException e) {
-            throw new ProcesarArchivoException("Error al procesar el archivo: " + e.getMessage());
+            throw new ProcesarArchivoException("Error al procesar el archivo. ");
         } catch (Exception e) {
-            throw new BusquedaException("Error en la búsqueda: " + e.getMessage());
+            throw new BusquedaException("Error en la busqueda del archivo. ");
         }
     }
 
@@ -66,6 +67,12 @@ public class BusquedaResultadoService {
                 contenido.append(linea).append("\n");
             }
         }
+
+
+        if (contenido.toString().trim().isEmpty()) {
+            throw new ArchivoVacioException("El archivo esta vacio.");
+        }
+
         return contenido.toString().trim();
     }
 
