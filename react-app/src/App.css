@@ -1,0 +1,119 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e0f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Encabezado de la sección */
+.header {
+  background-color: #4fc3f7;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Encabezados */
+h2 {
+  margin: 0;
+}
+
+/* Input de archivos */
+input[type="file"] {
+  margin: 15px 0;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  width: 97.5%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Grupo de radio buttons */
+.radio-group {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+}
+
+.radio-group label {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Sección de búsqueda */
+.search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Campo de texto */
+input[type="text"] {
+  width: 80%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+/* Contenido del archivo */
+.file-content {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-top: 20px;
+  white-space: pre-wrap;
+  background-color: #e3f2fd;
+  text-align: left;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Resaltado amarillo para palabras encontradas */
+.highlight {
+  background-color: yellow;
+}
+
+/* Contador de resultados */
+p.result-count {
+  margin: 20px 0 0;
+  font-size: 16px;
+  color: #555;
+}
