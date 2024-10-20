@@ -15,7 +15,20 @@ function FileUploader() {
     if (file && file.type === "text/plain") {
       const reader = new FileReader();
       reader.onload = (e) => {
-        setTexto(e.target.result);
+        const contenido = e.target.result;
+
+        // Validar si el archivo está vacío
+        if (contenido.trim() === "") {
+          setErrorMessage(
+            "El archivo está vacío. Por favor, sube un archivo con contenido."
+          );
+          setTexto("");
+          setPatron("");
+          setResultado(null);
+          return;
+        }
+
+        setTexto(contenido);
         setPatron("");
         setResultado(null);
         setErrorMessage("");
